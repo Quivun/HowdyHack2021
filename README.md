@@ -1,6 +1,6 @@
 # HowdyHack2021
 Team members:
-Harsh Gangaramani
-Aaron Su
-Joshua Chong
-Min Zhang
+Harsh Gangaramani<br>
+Aaron Su<br>
+Joshua Chong<br>
+Min Zhang<br>

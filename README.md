@@ -14,6 +14,6 @@ PT1--Music player:
 
 PT2--Desktop Background:
     Inputs: Genre, Volume--Tempo?
-    Outputs: Color, Pulses -- using opacity
+    Outputs: Chrome Overlay, Color, Pulses -- using opacity
 
 

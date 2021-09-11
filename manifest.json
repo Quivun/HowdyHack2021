@@ -1,12 +1,17 @@
 {
-    "manifest_version": 2,
-    "name": "HH2021_ChromeExt_Overlay",
-    "description": "Aaron Su, Harsh Gangaramani, Joshua Chong, and Min Zhang's HowdyHack 2021 project for an interactive audio player overlay for daily usage",
+    "name": "MAHJ",
+    "author" : "Aaron Su, Harsh Gangaramani, Joshua Chong, and Min Zhang",
+    "description": "HowdyHack 2021 project for an interactive audio player overlay for daily usage",
     "homepage_url": "https://github.com/Quivun/HowdyHack2021",
     "version": "0.0.1",
+    "manifest_version": 2,
     "offline_enabled": true,
+    "permissions": [ "storage", "tabs", "activeTab", "http://*/", "https://*/" ],
     "browser_action": {
-        "default_icon": "images/AS.png"
+        "default_icon": "images/AS.png",
+        "default_popup": "howdy.html",
+        "default_title": "MAHJ"
+        
     },
     "background": {
         "scripts": [
@@ -24,4 +29,5 @@
             ]
         }
     ]
+
 }

@@ -1,0 +1,19 @@
+{
+    "_comment": "<script type=\"text/javascript\" src=\"jquery.js\"></script>",
+    "manifest_version": 2,
+    "name": "HH2021_ChromeExt_Overlay",
+    "description": "Aaron Su, Harsh Gangaramani, Joshua Chong, and Min Zhang's HowdyHack 2021 project for an interactive audio player overlay for daily usage",
+    "homepage_url": "https://github.com/Quivun/HowdyHack2021",
+    "version": "0.0.1",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "jquery-3.6.0.min.js",
+                "content.js"
+            ]
+        }
+    ]
+}

@@ -4,4 +4,5 @@ tayuya
 SpeechRecognition
 requests
 pandas
+madmom #allows reading of music files and outputs locations of beats
 ###### Requirements with Version Specifiers : Eg : docopt == 0.6.1  ######`

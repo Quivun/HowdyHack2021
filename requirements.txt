@@ -2,4 +2,12 @@
 django
 youtubesearchpython
 tayuya
+
+
+
+
+
+
+
+pandas
 ###### Requirements with Version Specifiers : Eg : docopt == 0.6.1  ######`

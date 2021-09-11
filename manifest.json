@@ -4,14 +4,23 @@
     "description": "Aaron Su, Harsh Gangaramani, Joshua Chong, and Min Zhang's HowdyHack 2021 project for an interactive audio player overlay for daily usage",
     "homepage_url": "https://github.com/Quivun/HowdyHack2021",
     "version": "0.0.1",
+    "offline_enabled": true,
+    "browser_action": {
+        "default_icon": "images/AS.png"
+    },
+    "background": {
+        "scripts": [
+            "scripts/background.js"
+        ]
+    },
     "content_scripts": [
         {
             "matches": [
                 "<all_urls>"
             ],
             "js": [
-                "jquery-3.6.0.min.js",
-                "content.js"
+                "scripts/jquery-3.6.0.min.js",
+                "scripts/content.js"
             ]
         }
     ]

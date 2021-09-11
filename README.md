@@ -16,4 +16,5 @@ PT2--Desktop Background:
     Inputs: Genre, Volume--Tempo?
     Outputs: Chrome Overlay, Color, Pulses -- using opacity
 
-
+Potential Direction:
+Implement this with a music player company such as Spotify, which has servers that store all the music available to be played. Our application/program would run off of those songs stored in the server and create the animation overlay on the app as the song is played in real time.

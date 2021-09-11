@@ -2,12 +2,7 @@
 django
 youtubesearchpython
 tayuya
-
-
-
-
-
-
-
+SpeechRecognition
+requests
 pandas
 ###### Requirements with Version Specifiers : Eg : docopt == 0.6.1  ######`

@@ -2,8 +2,9 @@
 
 
 chrome.storage.sync.set({
-  currentTimeFrame: "0:00",
-  appActive: true,
+  curMusic: "yt_link",
+  curFrame: "0:00",
+  appActive: false,
   musicActive: false
 }, function () {
   console.log("Information Stored");
@@ -30,8 +31,15 @@ chrome.runtime.onMessage.addListener(
 );
 chrome.storage.sync.get(["appActive"], function (data) {
   if (data["appActive"]) {
+    chrome.storage.sync.set({ appActive: false }, function () {
+      console.log("Information Stored");
+    })
     chrome.browserAction.setBadgeText({ text: 'ON' });
+
   } else {
+    chrome.storage.sync.set({ appActive: true }, function () {
+      console.log("Information Stored");
+    })
     chrome.browserAction.setBadgeText({ text: 'OFF' });
   }
 });

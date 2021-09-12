@@ -1,3 +1,135 @@
+/*
+  Overall styling
+*/
+div#body {
+  padding: 10px;
+  width: 240px;
+  height: 300px;
+  min-height: 300px;
+  font-family: sans-serif;
+}
+h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+}
+h4 {
+  font-weight: bold;
+  font-size: 12px;
+  margin: 12px 0 6px 0;
+}
+#body .center {
+  text-align: center;
+}
+/*
+  Conlor picker
+*/
+.picker-container {
+  display: inline-block;
+}
+.picker-container .sp-container {
+  border: 1px solid #bbbbbb;
+}
+.picker-container .sp-input {
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #bbbbbb;
+}
+.picker-container .sp-input:focus {
+  outline: none;
+  border: 2px solid rgb(77, 144, 254);
+}
+/*
+  Save button
+  - not in use?
+*/
+.save-button__container {
+  text-align: right;
+}
+.save-button {
+  display: inline-block;
+  font-size: 10px; 
+  text-transform: uppercase;
+  background: rgba(66, 133, 244, 1);
+  color: #ffffff;
+  width: 40px;
+  padding: 8px 12px;
+  text-align: center;
+  cursor: pointer;
+}
+.save-button-pictogram {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  font-size: 18px;
+  vertical-align: text-bottom;
+  border-radius: 50%;
+  background: rgba(66, 133, 244, 1);
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+}
+/*
+  Favorites
+*/
+.favorites-container {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.favorites {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+.favorite-color-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid transparent;
+}
+.favorite-color {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+}
+.favorite-color--active {
+  border: 1px solid rgb(77, 144, 254);
+}
+.favorite-color--delete {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: -6px;
+  margin-top: -6px;
+  background: #d50000;
+  color: #ffffff;
+  font-size: 11px;
+  font-style: normal;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  width: 12px;
+  height: 12px;
+  line-height: 1;
+  padding: 1px;
+  text-align: center;
+}
+.favorite-color--full:hover + .favorite-color--delete,
+.favorite-color--delete:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.favorite-color--free + .favorite-color--delete:hover {
+  display: none;
+}
+
 boxTest {
   width: 100px;
   height: 100px;

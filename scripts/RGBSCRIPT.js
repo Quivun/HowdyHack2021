@@ -1,6 +1,11 @@
+//import music_data from "C:\Users\ritzr\Desktop\cs_projects\selfdrive car\music_data.json"
+
 var body = document.getElementById("body");
 var numVals = 7;
 var arrOfGPoints = Array.apply(null, Array(5)).map(function () {});
+
+
+
 var object = {
     angle: "90deg",
     table: []
@@ -66,41 +71,48 @@ var point = {
     "a":1,
     "p":100
 }
+
 object.table.push(point)
-var numTimes = 0
-var leftIncrement = -2
-var rightIncrement = 2
-setInterval(function(){updatePositions()}, 17)
-// for(a = 0;a<14;a++){
-//     updatePositions()
-// }
+
+// readTextFile("C:\Users\ritzr\Desktop\cs_projects\selfdrive car\music_data.json", function(text){
+//     var data = JSON.parse(text);
+// });
+// console.log((musicData['pulse'])[5])
+
+// const pulse = musicData.pulse
+// var prevPulse = 0
+// var pulseParser = 0
+var increment = 3
+
+setInterval(function(){updatePositions()}, 58.05)
+
 function updatePositions(){
-    //if(numTimes<20){
-        for(i=1;i<object.table.length-1;i++){
-            
-            if(i<object.table.length/2){
-                if(object.table[1].p>12 && object.table[1].p<32){
-                    object.table[i].p = object.table[i].p + leftIncrement
-                }
-                else{
-                    leftIncrement=leftIncrement*-1
-                    object.table[i].p = object.table[i].p + leftIncrement
-                }
-            }
-            else if(i>object.table.length/2){
-                if(object.table[i].p>=78 && object.table[i].p<=100){
-                    object.table[i].p = object.table[i].p + rightIncrement
-                }
-                else{
-                    rightIncrement= rightIncrement*-1
-                    object.table[i].p = object.table[i].p + rightIncrement
-                }
-            }
+    // var currPulse = pulse[pulseParser]
+    // var brightener = currPulse/100
+    for(i = 0;i<object.table.length;i++){
+        currAttributes = object.table[i]
+        currPos = currAttributes.p
+        if(currPos+increment>100){
+            object.table[i].p=0
         }
-        console.log(object.table)
-        setElements(object.table)
-    //}
-    //numTimes++
+        else
+            object.table[i].p+=increment
+        // if(currPulse!=0){
+        //     object.table[i].r+=brightener
+        //     object.table[i].g+=brightener
+        //     object.table[i].b+=brightener
+        // }
+        // else if(currPulse==0 && prevPulse!=0){
+        //     object.table[i].r-=brightener
+        //     object.table[i].g-=brightener
+        //     object.table[i].b-=brightener
+        //     brightener=0
+        // }
+        // prevPulse = currPulse
+        // pulseParser++
+    }
+    console.log(object.table)
+    setElements(object.table)
     return;
 }
 
@@ -115,6 +127,20 @@ function setElements(table){
     }
     styleText = styleText.replace(/.$/,")")
     console.log(styleText)
-    body.style = styleText
+    document.getElementById("top").style=styleText
+    document.getElementById("bottom").style=styleText
+    styleText  = "background:linear-gradient(180deg,"
+    for(i = 0;i<table.length;i++){
+        var currAttributes = table[i]
+        var toAdd = " rgba(" + (currAttributes.r).toString() + "," + (currAttributes.g).toString() + "," +
+        (currAttributes.b).toString() + "," + (currAttributes.a).toString() + ") " +
+        (currAttributes.p).toString() + "%,"
+        styleText+=toAdd
+    }
+    styleText = styleText.replace(/.$/,")")
+    console.log(styleText)
+    document.getElementById("left").style=styleText
+    document.getElementById("right").style=styleText
+    console.log(document.getElementById("right").background)
     return;
 }

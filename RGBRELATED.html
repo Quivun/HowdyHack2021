@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Gradient testing</title>
+        <link rel="stylesheet" href="temp.css">
     </head>
-    <body id="body" style="background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(4,117,192,1) 22%, rgba(8,39,141,0) 37%, rgba(9,9,121,0) 49%, rgba(8,33,137,0) 60%, rgba(4,117,192,1) 78%, rgba(2,0,36,1) 100%)">
-        <div class="text1">THIS IS TESTING YES IT IS</div>
-        <script src="scripts/RGBSCRIPT.js"></script>
+    <body>
+        <div id="left"></div>
+        <div id="right"></div>
+        <div id="top"></div>
+        <div id="bottom"></div>
     </body>
+    <style>
+        #left{
+            position: fixed;
+            top: 0; bottom: 0;left: 0;
+            width: 15px;
+            background:linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(4,117,192,1) 22%, rgba(8,39,141,0) 37%, rgba(9,9,121,0) 49%, rgba(8,33,137,0) 60%, rgba(4,117,192,1) 78%, rgba(2,0,36,1) 100%);
+            }
+        #right{
+            position: fixed;
+            top: 0; bottom: 0;right: 0;
+            width: 15px;
+            background:linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(4,117,192,1) 22%, rgba(8,39,141,0) 37%, rgba(9,9,121,0) 49%, rgba(8,33,137,0) 60%, rgba(4,117,192,1) 78%, rgba(2,0,36,1) 100%);
+            }
+        #top{
+            position: fixed;
+            left: 0; right:0;top: 0;
+            height: 15px;
+            background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(4,117,192,1) 22%, rgba(8,39,141,0) 37%, rgba(9,9,121,0) 49%, rgba(8,33,137,0) 60%, rgba(4,117,192,1) 78%, rgba(2,0,36,1) 100%);
+        }
+        #bottom{
+            position: fixed;
+            left: 0; right:0;bottom: 0;
+            height: 15px;
+            background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(4,117,192,1) 22%, rgba(8,39,141,0) 37%, rgba(9,9,121,0) 49%, rgba(8,33,137,0) 60%, rgba(4,117,192,1) 78%, rgba(2,0,36,1) 100%);
+        }
+        
+    </style>
+    <script src="tverytemp.js"></script>
+    <script type="text/javascript" src="music"></script>
 </html>

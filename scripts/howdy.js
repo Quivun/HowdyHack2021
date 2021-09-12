@@ -2,7 +2,6 @@
 
 // dont forget to use an external script file
 
-
 document.addEventListener("DOMContentLoaded", (event) => {
     const searchMsg = document.getElementById("searchMsg"),
         searchBar = document.getElementById("userInput"),
@@ -44,10 +43,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         });
     });
-    playButton.addEventListener("click", () => {
-        console.log("PRESENT")
-        chrome.extension.sendMessage({ action: "play" })
 
-
-    });
 });

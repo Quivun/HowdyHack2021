@@ -1,9 +1,13 @@
+// In popup.html 
+
+// dont forget to use an external script file
+
 
 document.addEventListener("DOMContentLoaded", (event) => {
     const searchMsg = document.getElementById("searchMsg"),
         searchBar = document.getElementById("userInput"),
         switcherSlide = document.getElementById('switcher'),
-        searchBtn = document.getElementById("searchBtn");
+        playButton = document.getElementById("playButton");
     searchMsg.style.visibility = "hidden";
 
     const URLpattern = "";
@@ -23,28 +27,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
             .then(res => res.json())
             .then(res => console.log(res));
         return
-});
-switcherSlide.addEventListener("click", () => {
-    chrome.storage.sync.get(["appActive"], function (data) {
-        if (data["appActive"]) {
-            chrome.storage.sync.set({ appActive: false }, function () {
-                console.log("Turned On!");
-            })
-            chrome.browserAction.setBadgeText({ text: 'ON' });
-        } else {
-            chrome.storage.sync.set({ appActive: true }, function () {
-                console.log("Turned Off!");
-            })
-            chrome.browserAction.setBadgeText({ text: 'OFF' });
-        }
     });
-});
-searchBtn.addEventListener("click", () => {
-    console.log("PRESENT")
-    const urlBool = searchBar.value.match(URLpattern);
-    if (urlBool) {
-        chrome.runtime.sendMessage({ action: "newWindow", url: urlBool[2] });
-    }
+    switcherSlide.addEventListener("click", () => {
+        chrome.storage.sync.get(["appActive"], function (data) {
+            if (data["appActive"]) {
+                chrome.storage.sync.set({ appActive: false }, function () {
+                    console.log("Turned On!");
+                })
+                chrome.browserAction.setBadgeText({ text: 'ON' });
+            } else {
+                chrome.storage.sync.set({ appActive: true }, function () {
+                    console.log("Turned Off!");
+                })
+                chrome.browserAction.setBadgeText({ text: 'OFF' });
+            }
+        });
+    });
+    playButton.addEventListener("click", () => {
+        console.log("PRESENT")
+        chrome.extension.sendMessage({ action: "play" })
 
-});
+        
+    });
 });

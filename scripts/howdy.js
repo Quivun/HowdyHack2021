@@ -1,4 +1,4 @@
-"use strict";
+
 document.addEventListener("DOMContentLoaded", (event) => {
     const searchMsg = document.getElementById("searchMsg"),
         searchBar = document.getElementById("userInput"),
@@ -24,7 +24,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     searchBtn.addEventListener("click", () => {
-        chrome.tabs.executeScript
+        chrome.storage.sync.get(["appActive"], function (data) {
+            if (data["appActive"]) {
+                chrome.storage.sync.set({appActive: false}, function () {
+                    console.log("Information Stored");
+                })
+                chrome.browserAction.setBadgeText({ text: 'ON' });
+            } else {
+                chrome.storage.sync.set({appActive: true}, function () {
+                    console.log("Information Stored");
+                })
+                chrome.browserAction.setBadgeText({ text: 'OFF' });
+            }
+        });
         /*console.log("PRESENT")
         const urlBool = searchBar.value.match(URLpattern);
         if (urlBool) {

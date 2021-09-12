@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 ary = np.array([1,5,2,4,6,4,7,5,9,7,20,11,40,13,8,0,10,15,17,19])
 aryPulse = np.array([1.648753, 1.970159, 2.291587, 2.612993, 2.934422, 3.23424, 3.549569, 3.864921, 4.180249, 4.82229, 5.452766, 6.098639, 6.728866, 7.359116, 8.013152, 8.643265, 9.291383, 9.922109, 10.565986, 11.196508])
-print(len(ary))
+# print(len(ary))
 
 def smooth(ary, brush_width):
     if (brush_width*2 > len(ary)):

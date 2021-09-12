@@ -88,7 +88,7 @@ function updatePositions(){
                 }
             }
             else if(i>object.table.length/2){
-                if(object.table[object.table.length-2].p>=78 && object.table[object.table.length-2].p<=100){
+                if(object.table[i].p>=78 && object.table[i].p<=100){
                     object.table[i].p = object.table[i].p + rightIncrement
                 }
                 else{
@@ -109,7 +109,7 @@ function setElements(table){
     for(i = 0;i<table.length;i++){
         var currAttributes = table[i]
         var toAdd = " rgba(" + (currAttributes.r).toString() + "," + (currAttributes.g).toString() + "," +
-        (currAttributes.b).toString() + "," + (currAttributes.a).toString() + "," + ") " +
+        (currAttributes.b).toString() + "," + (currAttributes.a).toString() + ") " +
         (currAttributes.p).toString() + "%,"
         styleText+=toAdd
     }

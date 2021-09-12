@@ -1,7 +1,7 @@
 ###### Requirements without Version Specifiers ######`
 django
 tayuya
-SpeechRecognition
+SpeechRecognition 
 requests
 pandas
 madmom #allows reading of music files and outputs locations of beats

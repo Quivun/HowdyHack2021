@@ -20,13 +20,13 @@ birthdayPitches = music_analysis.find_pitches_only("happy-birthday.wav")
 
 pulse_birthday = modify_ary.pulse(birthdayBeats, .005805, len(birthdayPitches))
 
-print(twinklePitches[:50])
+# print(twinklePitches[:50])
 dictionary1['pitches'] = twinklePitches[:max(len(twinklePitches), 100)]
-print(smooth_twinkle[:50])
+# print(smooth_twinkle[:50])
 dictionary1['smooths'] = (smooth_twinkle[:max(len(smooth_twinkle), 100)]).tolist()
-print(twinkleBeats[:20])
+# print(twinkleBeats[:20])
 dictionary1['beats'] = twinkleBeats[:max(len(twinkleBeats), 100)]
-print(twinkle_pulse[300:1000])
+# print(twinkle_pulse[300:1000])
 dictionary1['pulse'] = (twinkle_pulse[300:max(len(twinkle_pulse), 1000)]).tolist()
 
 with open("music_data.json", "w") as outfile:

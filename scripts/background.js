@@ -1,4 +1,16 @@
 // Called when the user clicks on the browser action.
+
+
+
+chrome.storage.local.set({
+  currentTimeFrame : "0:00",
+  musicActive : true
+});
+
+// List with a json object
+// Git looks like a set, input default values.
+// the reason the git looks like a set is because when you have defaults it won't break anything.
+//
 chrome.browserAction.onClicked.addListener(function (tab) {
   // Send a message to the active tab
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -13,7 +25,7 @@ chrome.runtime.onMessage.addListener(
     }
   }
 );
-storageArea.get(["overlay-status"], function (data) {
+chrome.storage.local.get(["overlay-status"], function (data) {
   if (data["overlay-status"] === "on") {
     chrome.browserAction.setBadgeText({text: 'ON'});
   } else {
@@ -44,6 +56,9 @@ chrome.windows.getAll({
     var j = 0, t = currentWindow.tabs.length, currentTab;
     for (; j < t; j++) {
       currentTab = currentWindow.tabs[j];
+      // json object script | give it a file
+      console.log("Running")
+      chrome.tabs.executeScript(currentWindow.tabs[j],{code : "window.alert(1)"});
       // Skip chrome:// and https:// pages
       if (!currentTab.url.match(/(chrome|https):\/\//gi)) {
         injectIntoTab(currentTab);

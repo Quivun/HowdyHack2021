@@ -9,6 +9,7 @@ div#body {
   font-family: sans-serif;
 }
 h1 {
+  padding: 5px;
   margin: 0;
   text-align: center;
   font-size: 18px;

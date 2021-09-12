@@ -4,19 +4,26 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-
+from selenium import webdriver
 
 PATH = "C:\Program Files (x86)\chromedriver.exe"
-driver = webdriver.Chrome(PATH)
+
+options = webdriver.ChromeOptions()
+options.add_argument("headless")
+driver = webdriver.Chrome(PATH, chrome_options=options)
+
+
+
+
 
 driver.get("https://www.chosic.com/music-genre-finder/")
 
 search = driver.find_element_by_id("search-word")
-search.send_keys("g.o.a.t polyphia")
+search.send_keys("tongue tied")
 time.sleep(3)
 element = driver.find_element_by_id("hh1")
 element.click()
-time.sleep(1)
+time.sleep(3)
 genre = (driver.find_element_by_class_name("lastfm-taga")).text
 print(genre)
 # try:

@@ -26,3 +26,16 @@ def find_pitches(file):
 
     return pitches
 
+def find_pitches_only(file):
+    command = subprocess.check_output(["aubio", "pitch", file])
+
+    temp_pitches = ((command).decode("utf-8")).split("\n")
+    pitches = []
+    for x in temp_pitches:
+        if x != "":
+            time, pitch = x.split("\t")
+            pitches.append(float(pitch))
+
+    return pitches
+
+

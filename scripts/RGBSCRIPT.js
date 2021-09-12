@@ -127,7 +127,7 @@ var object = {
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  }
+}
 
 
 var increment = 3
@@ -142,6 +142,7 @@ searchBar.addEventListener("keypress", (e) => {
     var rand = getRandomInt(5)
     var arr = ['country', 'rock', 'pop', 'hip-hop', 'edm', 'classical']
     currGenre = arr[rand]
+    currVals = object[currGenre]
     return
 })
 

@@ -25,9 +25,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         var titleStr = hostIP + searchBar.value
         fetch(titleStr)
             .then(res => res.json())
-            .then(res => console.log(res));
+            .then(res => document.getElementById("videoplayer").setAttribute("src","https://www.youtube.com/embed/" + res[searchBar.value].substring(32,) + "?autoplay=1"))
+        
         return
-    });
+    })
     switcherSlide.addEventListener("click", () => {
         chrome.storage.sync.get(["appActive"], function (data) {
             if (data["appActive"]) {
@@ -47,6 +48,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         console.log("PRESENT")
         chrome.extension.sendMessage({ action: "play" })
 
-        
+
     });
 });

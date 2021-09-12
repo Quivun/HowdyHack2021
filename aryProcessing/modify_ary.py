@@ -15,7 +15,15 @@ def smooth(ary, brush_width):
     return(smooth_ary)
 
 def map_to_255(ary):
-    new_ary = ary * 255/max(ary)
+    ary = ary * 255/max(ary)
+    return(ary)
+
+def pulse(ary, sample_time, pulse_amplitude = 200, pulse_duration = 5): #pulse size and duration optional    .005805 is sample_time
+    new_ary = np.zeros(len(ary))
+    for t in ary:
+        sample_num = t/sample_time
+        for m in range(len(pulse_duration)):
+            new_ary[sample_num + m] = pulse_amplitude/(m+1)
     return(new_ary)
 
 ary1 = smooth(ary, 2)

@@ -20,9 +20,12 @@
     },
     "content_scripts": [
         {
+            "all_frames": false,
+            "css":[ ],
             "matches": [
-                "<all_urls>"
+                "http://*/*", "https://*/*","<all_urls>"
             ],
+            "run_at": "document_idle",
             "js": [
                 "scripts/jquery-3.6.0.min.js",
                 "scripts/content.js"
